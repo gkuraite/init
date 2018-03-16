@@ -1,1 +1,1 @@
-sudo pkill sudo
+sudo pkill tail:wq
