@@ -1,1 +1,1 @@
-/home/vagrant/.ssh/authorized_keys
+cat /home/vagrant/.ssh/authorized_keys

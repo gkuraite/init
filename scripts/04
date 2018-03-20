@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+# to create a schedule, write in VM command line : contrab -e, then write 1
+# to add the time, out a the end of file a new line : 0 0 * * 0-6
+# 0-6 means it's going to be updated every day
