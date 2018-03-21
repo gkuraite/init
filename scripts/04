@@ -1,6 +1,19 @@
 #!/bin/bash
 
+file=$(md5sum /etc/crontab | awk '{ print $1 }')
+modified="/etc/crontab.stock"
+if [ -f "$modified" ]
+	then
+		modified=$(cat /etc/crontab.stock | awk '{ print $1 }')
+	else
+		modified="$file"
+	fi
+if [ "$file" != "$modified" ]
+	then
+		echo "The file has been changed" | mail -s "/etc/crontab modified" root
+	fi
+md5sum /etc/crontab | awk '{ print $1 }' > /etc/crontab.stock
 
 # to create a schedule, write in VM command line : contrab -e, then write 1
-# to add the time, out a the end of file a new line : 0 0 * * 0-6
-# 0-6 means it's going to be updated every day
+# to add the time, out a the end of file a new line : 0 0 * * 0-6 /path/to/file
+# 0-6 means it's going to be updated everyday Sunday -> Monday

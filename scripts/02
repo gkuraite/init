@@ -1,5 +1,7 @@
-sudo sh 'apt-get update >> /var/log/update_script.log ; apt-get upgrade >> /var/log/update_script.log ; apt_get dist-upgrade >> /var/log/update_script.log'
+#!/bin/bash
+
+sudo sh -c 'apt-get -q -y update >> /var/log/update_script.log ; apt-get -q -y upgrade >> /var/log/update_script.log ; apt-get -q -y dist-upgrade >> /var/log/update_script.log'
 
 # to create a schedule, write in VM command line : contrab -e, then write 1
-# to add the time, out a the end of file a new line : 0 4 * * 3
+# to add the time, out a the end of file a new line : 0 4 * * 3 path/to/file
 # 3 means it's going to be updated every Wednesday

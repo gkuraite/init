@@ -1,2 +1,0 @@
-#to create a schedule do in the command line : "crontab -e"
-#then "0 4 * * 0 /path/to/file"
